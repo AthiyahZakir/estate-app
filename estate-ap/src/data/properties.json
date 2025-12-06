@@ -1,0 +1,116 @@
+{
+	"properties": [
+        {
+            "id":"prop1",
+			"type":"House",
+            "bedrooms":3,
+			"price":750000,
+			"tenure":"Freehold",
+			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland.",
+			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
+			"picture":"images/prop1pic1small.jpg",
+			"url":"properties/prop1.html",
+            "added": {
+                "month":"October",
+                "day":12,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop2",
+			"type":"Flat",
+            "bedrooms":2,
+			"price":399995,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat.",
+			"location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.jpg",
+			"url":"properties/prop2.html",
+            "added": {
+                "month":"September",
+                "day":14,
+                "year":2022
+            }
+        },
+        {
+            "id":"prop3",
+			"type":"Bungalow",
+            "bedrooms":2,
+			"price":520000,
+			"tenure":"Freehold",
+			"description":"Charming two bedroom bungalow in a quiet residential area.",
+			"location":"Maple Drive, Bromley BR1",
+			"picture":"images/prop3pic1small.jpg",
+			"url":"properties/prop3.html",
+            "added": {
+                "month":"November",
+                "day":5,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop4",
+			"type":"House",
+            "bedrooms":4,
+			"price":895000,
+			"tenure":"Freehold",
+			"description":"Stunning four bedroom detached family home.",
+			"location":"Victoria Road, Sevenoaks TN13",
+			"picture":"images/prop4pic1small.jpg",
+			"url":"properties/prop4.html",
+            "added": {
+                "month":"December",
+                "day":1,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop5",
+			"type":"Flat",
+            "bedrooms":1,
+			"price":275000,
+			"tenure":"Leasehold",
+			"description":"Modern one bedroom apartment in sought-after development.",
+			"location":"Station Approach, Beckenham BR3",
+			"picture":"images/prop5pic1small.jpg",
+			"url":"properties/prop5.html",
+            "added": {
+                "month":"October",
+                "day":28,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop6",
+			"type":"House",
+            "bedrooms":5,
+			"price":1250000,
+			"tenure":"Freehold",
+			"description":"Exceptional five bedroom executive home in prestigious location.",
+			"location":"The Ridgeway, Chislehurst BR7",
+			"picture":"images/prop6pic1small.jpg",
+			"url":"properties/prop6.html",
+            "added": {
+                "month":"September",
+                "day":20,
+                "year":2024
+            }
+        },
+        {
+            "id":"prop7",
+			"type":"Flat",
+            "bedrooms":3,
+			"price":625000,
+			"tenure":"Leasehold",
+			"description":"Superb three bedroom penthouse apartment with spectacular views.",
+			"location":"High Street, Orpington BR6",
+			"picture":"images/prop7pic1small.jpg",
+			"url":"properties/prop7.html",
+            "added": {
+                "month":"November",
+                "day":18,
+                "year":2024
+            }
+        }
+	]
+}
