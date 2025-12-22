@@ -125,9 +125,30 @@ function SearchForm() {
           Search Properties
         </Button>
 
+         {/* Reset Button */}
+        <Button 
+          variant="outlined" 
+          size="large" 
+          onClick={handleReset}
+          color="secondary"
+        >
+          Reset Form
+        </Button>
+
       </Box>
     </Paper>
   );
 }
+
+// Handle reset button click
+  const handleReset = () => {
+    setPropertyType('');
+    setMinPrice('');
+    setMaxPrice('');
+    setBedrooms('');
+    setDateAdded(null);
+    setPostcode('');
+    console.log('Form reset!');
+  };
 
 export default SearchForm;
