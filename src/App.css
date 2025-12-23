@@ -81,3 +81,53 @@ body {
     padding: 20px 15px;
   }
 }
+
+/* === RESULTS SECTION === */
+.results-header {
+  margin-bottom: 30px;
+}
+
+.results-header h2 {
+  font-size: 1.8rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* No Results Message */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.no-results p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.no-results p:first-child {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .results-header h2 {
+    font-size: 1.4rem;
+  }
+}
