@@ -13,7 +13,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import './SearchForm.css';
 
-function SearchForm() {
+function SearchForm({ onSearch, onReset }) {
   // State to store form values
   const [propertyType, setPropertyType] = useState('');
   const [minPrice, setMinPrice] = useState('');
@@ -24,15 +24,17 @@ function SearchForm() {
 
   // Handle search button click
   const handleSearch = () => {
-    console.log('Search clicked!');
-    console.log({
+    const criteria = {
       propertyType,
       minPrice,
       maxPrice,
       bedrooms,
-      dateAdded,
+      dateAdded: dateAdded ? dateAdded.format('YYYY-MM-DD') : null,
       postcode
-    });
+    };
+    
+    // Send criteria to parent (App.jsx)
+    onSearch(criteria);
   };
 
   // Handle reset button click
@@ -43,7 +45,9 @@ function SearchForm() {
     setBedrooms('');
     setDateAdded(null);
     setPostcode('');
-    console.log('Form reset!');
+    
+    // Tell parent to reset
+    onReset();
   };
 
   return (
