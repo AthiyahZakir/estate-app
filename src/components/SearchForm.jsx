@@ -7,12 +7,11 @@ import {
   InputLabel,
   Button,
   Box,
-  Paper,
-  Typography
 } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import './SearchForm.css';
 
 function SearchForm() {
   // State to store form values
@@ -36,111 +35,7 @@ function SearchForm() {
     });
   };
 
-  return (
-    <Paper elevation={3} sx={{ padding: 3, margin: 3, maxWidth: 800, marginLeft: 'auto', marginRight: 'auto' }}>
-      <Typography variant="h4" gutterBottom align="center">
-        Find Your Dream Property
-      </Typography>
-
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        
-        {/* Property Type Dropdown */}
-        <FormControl fullWidth>
-          <InputLabel>Property Type</InputLabel>
-          <Select
-            value={propertyType}
-            label="Property Type"
-            onChange={(e) => setPropertyType(e.target.value)}
-          >
-            <MenuItem value="">Any</MenuItem>
-            <MenuItem value="House">House</MenuItem>
-            <MenuItem value="Flat">Flat</MenuItem>
-            <MenuItem value="Bungalow">Bungalow</MenuItem>
-          </Select>
-        </FormControl>
-
-        {/* Price Range */}
-        <Box sx={{ display: 'flex', gap: 2 }}>
-          <TextField
-            fullWidth
-            label="Min Price (£)"
-            type="number"
-            value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
-            placeholder="e.g., 200000"
-          />
-          <TextField
-            fullWidth
-            label="Max Price (£)"
-            type="number"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
-            placeholder="e.g., 500000"
-          />
-        </Box>
-
-        {/* Bedrooms Dropdown */}
-        <FormControl fullWidth>
-          <InputLabel>Bedrooms</InputLabel>
-          <Select
-            value={bedrooms}
-            label="Bedrooms"
-            onChange={(e) => setBedrooms(e.target.value)}
-          >
-            <MenuItem value="">Any</MenuItem>
-            <MenuItem value="1">1</MenuItem>
-            <MenuItem value="2">2</MenuItem>
-            <MenuItem value="3">3</MenuItem>
-            <MenuItem value="4">4</MenuItem>
-            <MenuItem value="5">5+</MenuItem>
-          </Select>
-        </FormControl>
-
-        {/* Date Added Picker */}
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker
-            label="Date Added (After)"
-            value={dateAdded}
-            onChange={(newValue) => setDateAdded(newValue)}
-            slotProps={{ textField: { fullWidth: true } }}
-          />
-        </LocalizationProvider>
-
-        {/* Postcode */}
-        <TextField
-          fullWidth
-          label="Postcode"
-          value={postcode}
-          onChange={(e) => setPostcode(e.target.value)}
-          placeholder="e.g., BR5"
-        />
-
-        {/* Search Button */}
-        <Button 
-          variant="contained" 
-          size="large" 
-          onClick={handleSearch}
-          sx={{ marginTop: 2 }}
-        >
-          Search Properties
-        </Button>
-
-         {/* Reset Button */}
-        <Button 
-          variant="outlined" 
-          size="large" 
-          onClick={handleReset}
-          color="secondary"
-        >
-          Reset Form
-        </Button>
-
-      </Box>
-    </Paper>
-  );
-}
-
-// Handle reset button click
+  // Handle reset button click
   const handleReset = () => {
     setPropertyType('');
     setMinPrice('');
@@ -150,5 +45,107 @@ function SearchForm() {
     setPostcode('');
     console.log('Form reset!');
   };
+
+  return (
+    <div className="search-form">
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        
+        {/* Row 1: Property Type, Bedrooms, Postcode */}
+        <Box className="form-row">
+          <FormControl className="form-field">
+            <InputLabel>Property Type</InputLabel>
+            <Select
+              value={propertyType}
+              label="Property Type"
+              onChange={(e) => setPropertyType(e.target.value)}
+            >
+              <MenuItem value="">Any</MenuItem>
+              <MenuItem value="House">House</MenuItem>
+              <MenuItem value="Flat">Flat</MenuItem>
+              <MenuItem value="Bungalow">Bungalow</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl className="form-field">
+            <InputLabel>Bedrooms</InputLabel>
+            <Select
+              value={bedrooms}
+              label="Bedrooms"
+              onChange={(e) => setBedrooms(e.target.value)}
+            >
+              <MenuItem value="">Any</MenuItem>
+              <MenuItem value="1">1</MenuItem>
+              <MenuItem value="2">2</MenuItem>
+              <MenuItem value="3">3</MenuItem>
+              <MenuItem value="4">4</MenuItem>
+              <MenuItem value="5">5+</MenuItem>
+            </Select>
+          </FormControl>
+
+          <TextField
+            className="form-field"
+            label="Postcode"
+            value={postcode}
+            onChange={(e) => setPostcode(e.target.value)}
+            placeholder="e.g., BR5"
+          />
+        </Box>
+
+        {/* Row 2: Price Range, Date */}
+        <Box className="form-row">
+          <TextField
+            className="form-field"
+            label="Min Price (£)"
+            type="number"
+            value={minPrice}
+            onChange={(e) => setMinPrice(e.target.value)}
+            placeholder="200000"
+          />
+          
+          <TextField
+            className="form-field"
+            label="Max Price (£)"
+            type="number"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+            placeholder="500000"
+          />
+
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              className="form-field"
+              label="Date Added (After)"
+              value={dateAdded}
+              onChange={(newValue) => setDateAdded(newValue)}
+              slotProps={{ textField: { fullWidth: true } }}
+            />
+          </LocalizationProvider>
+        </Box>
+
+        {/* Row 3: Buttons */}
+        <Box className="button-row">
+          <Button 
+            variant="contained" 
+            size="large" 
+            onClick={handleSearch}
+            className="search-button"
+          >
+            Search Properties
+          </Button>
+
+          <Button 
+            variant="outlined" 
+            size="large" 
+            onClick={handleReset}
+            className="reset-button"
+          >
+            Reset
+          </Button>
+        </Box>
+
+      </Box>
+    </div>
+  );
+}
 
 export default SearchForm;
