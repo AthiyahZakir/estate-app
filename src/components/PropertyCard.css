@@ -1,4 +1,11 @@
 /* === PROPERTY CARD === */
+/* Property Card Link */
+.property-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .property-card {
   background-color: #ffffff;
   border-radius: 8px;
