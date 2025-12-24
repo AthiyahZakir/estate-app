@@ -11,6 +11,17 @@
       "postcode": "BR5",
       "picture": "images/prop1pic1small.jpg",
       "image": "/src/assets/properties/prop1/main.jpg",
+      "images": [
+        "/src/assets/properties/prop1/main.jpg",
+        "/src/assets/properties/prop1/living.jpg",
+        "/src/assets/properties/prop1/kitchen.jpg",
+        "/src/assets/properties/prop1/bedroom.jpg",
+        "/src/assets/properties/prop1/bathroom.jpg",
+        "/src/assets/properties/prop1/garden.jpg"
+      ],
+      "floorPlan": "/src/assets/properties/prop1/floorplan.jpg",
+      "latitude": 51.3897,
+      "longitude": 0.0761,
       "url": "properties/prop1.html",
       "added": {
         "month": "October",
@@ -30,6 +41,17 @@
       "postcode": "BR6",
       "picture": "images/prop2pic1small.jpg",
       "image": "/src/assets/properties/prop2/main.jpg",
+      "images": [
+        "/src/assets/properties/prop2/main.jpg",
+        "/src/assets/properties/prop2/living.jpg",
+        "/src/assets/properties/prop2/kitchen.jpg",
+        "/src/assets/properties/prop2/bedroom.jpg",
+        "/src/assets/properties/prop2/bathroom.jpg",
+        "/src/assets/properties/prop2/garden.jpg"
+      ],
+      "floorPlan": "/src/assets/properties/prop2/floorplan.jpg",
+      "latitude": 51.3733,
+      "longitude": 0.0989,
       "url": "properties/prop2.html",
       "added": {
         "month": "September",
@@ -49,6 +71,17 @@
       "postcode": "BR1",
       "picture": "images/prop3pic1small.jpg",
       "image": "/src/assets/properties/prop3/main.jpg",
+      "images": [
+        "/src/assets/properties/prop3/main.jpg",
+        "/src/assets/properties/prop3/living.jpg",
+        "/src/assets/properties/prop3/kitchen.jpg",
+        "/src/assets/properties/prop3/bedroom.jpg",
+        "/src/assets/properties/prop3/bathroom.jpg",
+        "/src/assets/properties/prop3/garden.jpg"
+      ],
+      "floorPlan": "/src/assets/properties/prop3/floorplan.jpg",
+      "latitude": 51.4069,
+      "longitude": 0.0149,
       "url": "properties/prop3.html",
       "added": {
         "month": "November",
@@ -68,6 +101,17 @@
       "postcode": "TN13",
       "picture": "images/prop4pic1small.jpg",
       "image": "/src/assets/properties/prop4/main.jpg",
+      "images": [
+        "/src/assets/properties/prop4/main.jpg",
+        "/src/assets/properties/prop4/living.jpg",
+        "/src/assets/properties/prop4/kitchen.jpg",
+        "/src/assets/properties/prop4/bedroom.jpg",
+        "/src/assets/properties/prop4/bathroom.jpg",
+        "/src/assets/properties/prop4/garden.jpg"
+      ],
+      "floorPlan": "/src/assets/properties/prop4/floorplan.jpg",
+      "latitude": 51.2726,
+      "longitude": 0.1882,
       "url": "properties/prop4.html",
       "added": {
         "month": "December",
@@ -87,6 +131,17 @@
       "postcode": "BR3",
       "picture": "images/prop5pic1small.jpg",
       "image": "/src/assets/properties/prop5/main.jpg",
+      "images": [
+        "/src/assets/properties/prop5/main.jpg",
+        "/src/assets/properties/prop5/living.jpg",
+        "/src/assets/properties/prop5/kitchen.jpg",
+        "/src/assets/properties/prop5/bedroom.jpg",
+        "/src/assets/properties/prop5/bathroom.jpg",
+        "/src/assets/properties/prop5/garden.jpg"
+      ],
+      "floorPlan": "/src/assets/properties/prop5/floorplan.jpg",
+      "latitude": 51.4088,
+      "longitude": -0.0251,
       "url": "properties/prop5.html",
       "added": {
         "month": "October",
@@ -106,6 +161,17 @@
       "postcode": "BR7",
       "picture": "images/prop6pic1small.jpg",
       "image": "/src/assets/properties/prop6/main.jpg",
+      "images": [
+        "/src/assets/properties/prop6/main.jpg",
+        "/src/assets/properties/prop6/living.jpg",
+        "/src/assets/properties/prop6/kitchen.jpg",
+        "/src/assets/properties/prop6/bedroom.jpg",
+        "/src/assets/properties/prop6/bathroom.jpg",
+        "/src/assets/properties/prop6/garden.jpg"
+      ],
+      "floorPlan": "/src/assets/properties/prop6/floorplan.jpg",
+      "latitude": 51.4173,
+      "longitude": 0.0693,
       "url": "properties/prop6.html",
       "added": {
         "month": "September",
@@ -125,6 +191,17 @@
       "postcode": "BR6",
       "picture": "images/prop7pic1small.jpg",
       "image": "/src/assets/properties/prop7/main.jpg",
+      "images": [
+        "/src/assets/properties/prop7/main.jpg",
+        "/src/assets/properties/prop7/living.jpg",
+        "/src/assets/properties/prop7/kitchen.jpg",
+        "/src/assets/properties/prop7/bedroom.jpg",
+        "/src/assets/properties/prop7/bathroom.jpg",
+        "/src/assets/properties/prop7/garden.jpg"
+      ],
+      "floorPlan": "/src/assets/properties/prop7/floorplan.jpg",
+      "latitude": 51.3726,
+      "longitude": 0.0968,
       "url": "properties/prop7.html",
       "added": {
         "month": "November",
