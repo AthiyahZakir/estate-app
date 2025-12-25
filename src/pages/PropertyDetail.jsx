@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import propertiesData from '../data/properties.json';
-import './PropertyDetail.css';
+import './PropertyDetails.css';
 
 function PropertyDetail() {
   const { id } = useParams();
