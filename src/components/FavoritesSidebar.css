@@ -1,0 +1,164 @@
+/* === FAVORITES SIDEBAR === */
+.favorites-sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+/* Header */
+.favorites-header {
+  padding: 20px;
+  background-color: #8B0000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorites-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.clear-all-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.clear-all-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Favorites List */
+.favorites-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Empty State */
+.empty-favorites {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-favorites p:first-child {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.empty-favorites p:nth-child(2) {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.empty-hint {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Favorite Item */
+.favorite-item {
+  display: flex;
+  gap: 12px;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.favorite-item:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-item img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.favorite-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.favorite-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #8B0000;
+  margin-bottom: 5px;
+}
+
+.favorite-details {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.favorite-location {
+  font-size: 0.8rem;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Remove Button */
+.remove-favorite {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(139, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.remove-favorite:hover {
+  background-color: #8B0000;
+  transform: scale(1.1);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .favorites-sidebar {
+    width: 100%;
+    transform: translateX(100%);
+  }
+
+  .favorites-sidebar.has-items {
+    transform: translateX(0);
+  }
+}
