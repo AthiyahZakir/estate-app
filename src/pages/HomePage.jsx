@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import SearchForm from '../components/SearchForm';
-import PropertyCard from '../components/PropertyCard';
-import propertiesData from '../data/properties.json';
+import DraggablePropertyCard from '../components/DraggablePropertyCard';
 import FavoritesSidebar from '../components/FavoritesSidebar';
+import propertiesData from '../data/properties.json';
 
 function HomePage() {
   const allProperties = propertiesData.properties;
@@ -57,42 +59,44 @@ function HomePage() {
   };
 
   return (
-    <div className="App">
-      <header className="app-header">
-        <div className="header-content">
-          <div className="logo">
-            <h1>ESTATE<span>FINDER</span></h1>
-          </div>
-          <SearchForm onSearch={handleSearch} onReset={handleReset} />
-        </div>
-      </header>
-
-      <main className="main-content">
-        <div className="results-header">
-          <h2>
-            {searchPerformed 
-              ? `${filteredProperties.length} Properties Found`
-              : 'All Properties'
-            }
-          </h2>
-        </div>
-
-        <div className="results-grid">
-          {filteredProperties.length > 0 ? (
-            filteredProperties.map((property) => (
-              <PropertyCard key={property.id} property={property} />
-            ))
-          ) : (
-            <div className="no-results">
-              <p>No properties match your search criteria.</p>
-              <p>Try adjusting your filters.</p>
+    <DndProvider backend={HTML5Backend}>
+      <div className="App">
+        <header className="app-header">
+          <div className="header-content">
+            <div className="logo">
+              <h1>ESTATE<span>FINDER</span></h1>
             </div>
-          )}
-        </div>
-      </main>
+            <SearchForm onSearch={handleSearch} onReset={handleReset} />
+          </div>
+        </header>
 
-      <FavoritesSidebar />
-    </div>
+        <main className="main-content">
+          <div className="results-header">
+            <h2>
+              {searchPerformed 
+                ? `${filteredProperties.length} Properties Found`
+                : 'All Properties'
+              }
+            </h2>
+          </div>
+
+          <div className="results-grid">
+            {filteredProperties.length > 0 ? (
+              filteredProperties.map((property) => (
+                <DraggablePropertyCard key={property.id} property={property} />
+              ))
+            ) : (
+              <div className="no-results">
+                <p>No properties match your search criteria.</p>
+                <p>Try adjusting your filters.</p>
+              </div>
+            )}
+          </div>
+        </main>
+        
+        <FavoritesSidebar />
+      </div>
+    </DndProvider>
   );
 }
 
