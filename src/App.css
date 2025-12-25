@@ -131,3 +131,14 @@ body {
     font-size: 1.4rem;
   }
 }
+
+/* === ADJUST FOR FAVORITES SIDEBAR === */
+@media (min-width: 769px) {
+  .main-content {
+    margin-right: 350px; /* Space for sidebar */
+  }
+  
+  .header-content {
+    margin-right: 350px;
+  }
+}

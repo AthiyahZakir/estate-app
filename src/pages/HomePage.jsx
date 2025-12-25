@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SearchForm from '../components/SearchForm';
 import PropertyCard from '../components/PropertyCard';
 import propertiesData from '../data/properties.json';
+import FavoritesSidebar from '../components/FavoritesSidebar';
 
 function HomePage() {
   const allProperties = propertiesData.properties;
@@ -89,6 +90,8 @@ function HomePage() {
           )}
         </div>
       </main>
+
+      <FavoritesSidebar />
     </div>
   );
 }
