@@ -6,6 +6,8 @@ import SearchForm from '../components/SearchForm';
 import DraggablePropertyCard from '../components/DraggablePropertyCard';
 import FavoritesSidebar from '../components/FavoritesSidebar';
 import propertiesData from '../data/properties.json';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function HomePage() {
   // Load all properties from JSON
@@ -89,6 +91,7 @@ function HomePage() {
   return (
     // DnD Provider enables drag-and-drop throughout the page
     <DndProvider backend={HTML5Backend}>
+      <Navbar />
       <div className="App">
         {/* Header with logo and search form */}
         <header className="app-header">
@@ -131,7 +134,8 @@ function HomePage() {
         
         {/* Favorites sidebar (fixed right side) */}
         <FavoritesSidebar />
-      </div>
+       </div>
+      <Footer />
     </DndProvider>
   );
 }

@@ -33,7 +33,6 @@ function SearchForm({ onSearch, onReset }) {
       postcode
     };
     
-    // Send criteria to parent (App.jsx)
     onSearch(criteria);
   };
 
@@ -46,12 +45,16 @@ function SearchForm({ onSearch, onReset }) {
     setDateAdded(null);
     setPostcode('');
     
-    // Tell parent to reset
     onReset();
   };
 
   return (
     <div className="search-form">
+      {/* Form Title */}
+      <h2 className="search-form-title">
+        Find Your <span>Dream Property</span>
+      </h2>
+
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         
         {/* Row 1: Property Type, Bedrooms, Postcode */}
@@ -88,10 +91,10 @@ function SearchForm({ onSearch, onReset }) {
 
           <TextField
             className="form-field"
-            label="Postcode"
+            label="Postcode Area"
             value={postcode}
             onChange={(e) => setPostcode(e.target.value)}
-            placeholder="e.g., BR5"
+            placeholder="e.g., BR5, BR1"
           />
         </Box>
 
@@ -134,7 +137,7 @@ function SearchForm({ onSearch, onReset }) {
             onClick={handleSearch}
             className="search-button"
           >
-            Search Properties
+            🔍 Search Properties
           </Button>
 
           <Button 
@@ -143,7 +146,7 @@ function SearchForm({ onSearch, onReset }) {
             onClick={handleReset}
             className="reset-button"
           >
-            Reset
+            ↻ Reset Filters
           </Button>
         </Box>
 

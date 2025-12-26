@@ -4,6 +4,8 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import propertiesData from '../data/properties.json';
 import './PropertyDetails.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function PropertyDetail() {
   const { id } = useParams();
@@ -32,6 +34,7 @@ function PropertyDetail() {
   return (
     <div className="property-detail">
       {/* Header with back button */}
+      <Navbar />
       <header className="detail-header">
         <div className="header-content">
           <Link to="/" className="back-button">← Back to Search</Link>
@@ -142,5 +145,6 @@ function PropertyDetail() {
     </div>
   );
 }
+<Footer />
 
 export default PropertyDetail;
