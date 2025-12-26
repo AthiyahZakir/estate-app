@@ -244,3 +244,121 @@
     border-bottom: 1px solid #f0f0f0;
   }
 }
+
+/* === TABLET (768px - 1024px) === */
+@media (max-width: 1024px) {
+  .detail-main {
+    padding: 30px;
+  }
+  
+  .detail-title {
+    font-size: 1.7rem;
+  }
+  
+  .detail-price {
+    font-size: 2.2rem;
+  }
+  
+  .detail-quick-info {
+    font-size: 1rem;
+  }
+  
+  .tab-panel h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* === MOBILE (< 768px) === */
+@media (max-width: 768px) {
+  .detail-header .header-content {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .back-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .detail-header .logo {
+    width: 100%;
+  }
+
+  .detail-container {
+    padding: 20px 15px;
+  }
+
+  .detail-main {
+    padding: 20px;
+  }
+
+  .detail-title {
+    font-size: 1.4rem;
+  }
+
+  .detail-price {
+    font-size: 1.8rem;
+  }
+  
+  .detail-quick-info {
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+  }
+
+  .tabs-header {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .tab-button {
+    padding: 12px 20px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+
+  .tab-button.active {
+    border-left: none;
+    border-bottom: 3px solid #8B0000;
+  }
+  
+  .tab-panel h3 {
+    font-size: 1.2rem;
+  }
+  
+  .tab-panel p {
+    font-size: 1rem;
+  }
+  
+  .tab-panel ul li {
+    font-size: 0.95rem;
+  }
+}
+
+/* === SMALL MOBILE (< 375px) === */
+@media (max-width: 374px) {
+  .detail-main {
+    padding: 15px;
+  }
+  
+  .detail-title {
+    font-size: 1.2rem;
+  }
+  
+  .detail-price {
+    font-size: 1.6rem;
+  }
+  
+  .detail-quick-info {
+    font-size: 0.85rem;
+  }
+  
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .tab-panel h3 {
+    font-size: 1.1rem;
+  }
+}
