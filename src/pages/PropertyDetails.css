@@ -87,7 +87,7 @@
   border-bottom: 2px solid #f0f0f0;
 }
 
-.detail-quick-info span:not(:last-child) {
+.detail-quick-info span {
   font-weight: 500;
 }
 
@@ -208,41 +208,6 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .detail-header .header-content {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .detail-main {
-    padding: 20px;
-  }
-
-  .detail-title {
-    font-size: 1.5rem;
-  }
-
-  .detail-price {
-    font-size: 2rem;
-  }
-
-  .tabs-header {
-    flex-direction: column;
-  }
-
-  .tab-button {
-    width: 100%;
-    text-align: left;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .tab-button.active {
-    border-left: 3px solid #8B0000;
-    border-bottom: 1px solid #f0f0f0;
-  }
 }
 
 /* === TABLET (768px - 1024px) === */
