@@ -11,7 +11,7 @@ function PropertyCard({ property, isDraggable = true }) {
   };
 
   const handleAddFavorite = (e) => {
-    e.preventDefault(); // Prevent navigation
+    e.preventDefault();
     e.stopPropagation();
     addFavorite(property);
   };
@@ -29,6 +29,11 @@ function PropertyCard({ property, isDraggable = true }) {
               }}
             />
             
+            {/* Property Type Badge */}
+            <div className="property-type-badge">
+              {property.type}
+            </div>
+            
             {/* Favorite Button Overlay */}
             <button 
               className={`favorite-button ${isAlreadyFavorite ? 'active' : ''}`}
@@ -43,12 +48,11 @@ function PropertyCard({ property, isDraggable = true }) {
             <div className="card-price">{formatPrice(property.price)}</div>
             
             <div className="card-details">
-              <span className="detail-item">{property.bedrooms} bed</span>
-              <span className="detail-separator">•</span>
-              <span className="detail-item">{property.type}</span>
+              <span className="detail-item">🛏️ {property.bedrooms} bed</span>
+              <span className="detail-item">🏠 {property.type}</span>
             </div>
             
-            <div className="card-address">{property.location}</div>
+            <div className="card-address">📍 {property.location}</div>
             
             <div className="card-tenure">{property.tenure}</div>
           </div>
