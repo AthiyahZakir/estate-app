@@ -2,10 +2,10 @@ import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import propertiesData from '../data/properties.json';
-import './PropertyDetails.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import propertiesData from '../data/properties.json';
+import './PropertyDetails.css';
 
 function PropertyDetail() {
   const { id } = useParams();
@@ -14,9 +14,13 @@ function PropertyDetail() {
 
   if (!property) {
     return (
-      <div className="property-not-found">
-        <h2>Property not found</h2>
-        <Link to="/">Back to Home</Link>
+      <div className="property-detail">
+        <Navbar />
+        <div className="property-not-found">
+          <h2>Oops! Property not found</h2>
+          <Link to="/">← Back to Search</Link>
+        </div>
+        <Footer />
       </div>
     );
   }
@@ -33,16 +37,7 @@ function PropertyDetail() {
 
   return (
     <div className="property-detail">
-      {/* Header with back button */}
       <Navbar />
-      <header className="detail-header">
-        <div className="header-content">
-          <Link to="/" className="back-button">← Back to Search</Link>
-          <div className="logo">
-            <h1>ESTATE<span>FINDER</span></h1>
-          </div>
-        </div>
-      </header>
 
       {/* Property Info Section */}
       <div className="detail-container">
@@ -51,11 +46,10 @@ function PropertyDetail() {
           <div className="detail-price">{formatPrice(property.price)}</div>
           
           <div className="detail-quick-info">
-            <span>{property.bedrooms} Bedrooms</span>
-            <span>•</span>
-            <span>{property.type}</span>
-            <span>•</span>
-            <span>{property.tenure}</span>
+            <span>🛏️ {property.bedrooms} Bedrooms</span>
+            <span>🏠 {property.type}</span>
+            <span>📜 {property.tenure}</span>
+            <span>📮 {property.postcode}</span>
           </div>
 
           {/* Image Gallery */}
@@ -66,6 +60,7 @@ function PropertyDetail() {
               showFullscreenButton={true}
               showNav={true}
               thumbnailPosition="bottom"
+              lazyLoad={true}
             />
           </div>
 
@@ -76,19 +71,19 @@ function PropertyDetail() {
                 className={`tab-button ${activeTab === 'description' ? 'active' : ''}`}
                 onClick={() => setActiveTab('description')}
               >
-                Description
+                📋 Description
               </button>
               <button 
                 className={`tab-button ${activeTab === 'floorplan' ? 'active' : ''}`}
                 onClick={() => setActiveTab('floorplan')}
               >
-                Floor Plan
+                📐 Floor Plan
               </button>
               <button 
                 className={`tab-button ${activeTab === 'map' ? 'active' : ''}`}
                 onClick={() => setActiveTab('map')}
               >
-                Map
+                🗺️ Location
               </button>
             </div>
 
@@ -101,9 +96,14 @@ function PropertyDetail() {
                   <h3>Key Features</h3>
                   <ul>
                     <li>{property.bedrooms} Bedrooms</li>
-                    <li>{property.type}</li>
-                    <li>{property.tenure}</li>
-                    <li>Postcode: {property.postcode}</li>
+                    <li>{property.type} Property</li>
+                    <li>{property.tenure} Tenure</li>
+                    <li>Located in {property.postcode} postcode area</li>
+                    <li>Added on {new Date(property.dateAdded).toLocaleDateString('en-GB', { 
+                      day: 'numeric', 
+                      month: 'long', 
+                      year: 'numeric' 
+                    })}</li>
                   </ul>
                 </div>
               )}
@@ -125,7 +125,7 @@ function PropertyDetail() {
 
               {activeTab === 'map' && (
                 <div className="tab-panel">
-                  <h3>Location</h3>
+                  <h3>Location Map</h3>
                   <div className="map-container">
                     <iframe
                       width="100%"
@@ -142,9 +142,10 @@ function PropertyDetail() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
-<Footer />
 
 export default PropertyDetail;
